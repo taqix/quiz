@@ -1,0 +1,6 @@
+*{margin: 0;padding:0;box-sizing: border-box;}
+body{
+    height: 60vw;
+    background: linear-gradient(0deg, rgba(34,193,195,1) 0%, rgba(45,53,253,1) 50%);
+    background-attachment: fixed;
+}
