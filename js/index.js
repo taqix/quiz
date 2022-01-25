@@ -33,4 +33,3 @@ function hide(){
     }
   document.getElementById("output").style.fontSize="4vw";
 }
-document.querySelector("muzyka").play();
