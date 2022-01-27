@@ -21,6 +21,36 @@ body {
   /* align-items: center;
     min-height: 100vh; */
 }
+#zacznij>button{
+  width: 15vw;
+  padding: 1vw;
+  font-size: 1.5vw;
+  border-radius: 90px;
+  color: white;
+  transition: 1s;
+  border: 1px solid black;
+  text-shadow: 2px 2px black;
+  font-family: 'Roboto', sans-serif;
+  margin-top: 45vh;
+  /* background: rgb(19,51,94);
+    background: linear-gradient(90deg, rgba(19,51,94,1) 0%, rgba(24,77,143,0.9500175070028011) 12%, rgba(17,40,83,0.9472163865546218) 40%, rgba(17,40,83,0.95) 60%, rgba(24,77,143,0.95) 88%, rgba(19,51,94,1) 100%); */
+  background: rgb(19, 51, 94);
+  background: linear-gradient(
+    50deg,
+    rgba(19, 51, 94, 1) 0%,
+    rgba(24, 77, 143, 0.9500175070028011) 12%,
+    rgba(17, 40, 83, 0.9472163865546218) 40%,
+    rgba(17, 40, 83, 0.95) 60%,
+    rgba(24, 77, 143, 0.95) 88%,
+    rgba(19, 51, 94, 1) 100%
+  );
+}
+#zacznij > button:hover {
+  cursor: pointer;
+  transform: scale(1.1);
+  transition: 0.6s;
+  border: 1px solid white;
+}
 #logo {
   width: 30vw;
   box-shadow: 0.3vw 0.3vw 15px white;
@@ -28,6 +58,7 @@ body {
   border: 3px solid black;
   animation: drop 2.5s 1s forwards ease-out, rotate 2s 3.7s;
   opacity: 0;
+  display: none;
 }
 #logo-small {
   width: 10vw;
@@ -58,11 +89,6 @@ body {
   justify-content: center;
   display: none;
   /*letter-spacing: 3px;*/
-}
-#hubert > img {
-  width: 25vw;
-  float: right;
-  border-bottom: 5px solid black;
 }
 #start {
   display: none;

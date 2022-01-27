@@ -1,8 +1,15 @@
-alert('Włącz dźwięk!')
-setInterval(hide_logo, 8000)
-setInterval(show_logo_small, 8000)
-setInterval(show_info, 8000)
-setInterval(show_start, 8000)
+function zacznij()
+{
+  document.getElementById("zacznij").style.display = "none"
+  alert('Włącz dźwięk!')
+  var audio = new Audio('audio/Milionerzy-main.mp3');
+  audio.play();
+  document.getElementById('logo').style.display = 'flex'
+  setInterval(hide_logo, 8000)
+  setInterval(show_logo_small, 8000)
+  setInterval(show_info, 8000)
+  setInterval(show_start, 8000)
+}
 function show_logo_small() {
   document.getElementById('logo-small').style.display = 'flex'
 }
