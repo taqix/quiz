@@ -1,9 +1,8 @@
-function zacznij()
-{
-  document.getElementById("zacznij").style.display = "none"
+function zacznij() {
+  document.getElementById('zacznij').style.display = 'none'
   alert('Włącz dźwięk!')
-  var audio = new Audio('audio/Milionerzy-main.mp3');
-  audio.play();
+  var audio = new Audio('audio/Milionerzy-main.mp3')
+  audio.play()
   document.getElementById('logo').style.display = 'flex'
   setInterval(hide_logo, 8000)
   setInterval(show_logo_small, 8000)
@@ -24,13 +23,10 @@ function hide_logo() {
 }
 function hide() {
   document.getElementById('logo-small').style.opacity = '0'
-  document.getElementById('logo-small').style.height = '0'
-  document.getElementById('logo-small').style.width = '0'
   document.getElementById('info').style.opacity = '0'
-  document.getElementById('info').style.margin = '0'
-  document.getElementById('info').style.height = '0'
-  document.getElementById('info').style.width = '0'
   document.getElementById('start').style.opacity = '0'
+  var button2 = document.getElementById('start')
+  button2.disabled = true
   document.getElementById('output').style.display = 'flex'
 
   document.getElementById('start').onclick = function start() {
@@ -49,20 +45,24 @@ function hide() {
   }
   wyczyscTablice()
   posortujPytania()
+  document.getElementById('glowna').style.display = 'block'
+  document.getElementById('glowna').style.opacity = '1'
   document.getElementById('pyt').innerHTML = posortowanePytania[0].question
   document.getElementById('cos').innerHTML = posortowanePytania[0].optionA
   document.getElementById('cos2').innerHTML = posortowanePytania[0].optionB
   document.getElementById('cos3').innerHTML = posortowanePytania[0].optionC
   document.getElementById('cos4').innerHTML = posortowanePytania[0].optionD
   document.getElementById('output').style.fontSize = '4vw'
-  document.getElementById('output').style.display = 'none'
-  document.getElementById('glowna').style.display = 'block'
-  document.getElementById('cos').style.display = 'block'
-  document.getElementById('cos2').style.display = 'block'
-  document.getElementById('cos3').style.display = 'block'
-  document.getElementById('cos4').style.display = 'block'
-  document.getElementById('pyt').style.display = 'block'
-  document.getElementById('wyborOdpowiedzi').style.display = 'block'
+  setTimeout(() => {
+    document.getElementById('output').style.display = 'none'
+    document.getElementById('glowna').style.display = 'block'
+    document.getElementById('cos').style.display = 'block'
+    document.getElementById('cos2').style.display = 'block'
+    document.getElementById('cos3').style.display = 'block'
+    document.getElementById('cos4').style.display = 'block'
+    document.getElementById('pyt').style.display = 'block'
+    document.getElementById('wyborOdpowiedzi').style.display = 'block'
+  }, 4000)
 }
 let dobreRadio = 'hejka'
 let indexik = 0
@@ -150,6 +150,31 @@ function wyborQuizu() {
     document.getElementById(dobreRadio).checked = false
     dobreRadio = 'hejka'
     indexik++
+    wynik++
+    if (wynik === 5) {
+      setTimeout(() => {
+        document.getElementById('option-modal').style.display = 'block'
+        document.getElementById('glowna').style.animationName = 'fadeOut'
+        document.getElementById('glowna').style.animationDuration = '1.2s'
+        document.getElementById('wygrana').innerHTML = wynik + ' jesteś koksem'
+        proba++
+        setTimeout(() => {
+          document.getElementById('glowna').style.animation = 'none'
+          document.getElementById('glowna').style.opacity = '0'
+
+          document.getElementById('option-modal').style.opacity = '1'
+          button.disabled = false
+        }, 1200)
+        document.getElementById('cos').style.backgroundColor = 'transparent'
+        document.getElementById('cos2').style.backgroundColor = 'transparent'
+        document.getElementById('cos3').style.backgroundColor = 'transparent'
+        document.getElementById('cos4').style.backgroundColor = 'transparent'
+        document.getElementById('glowna').style.display = 'none'
+        document.getElementById(dobreRadio).checked = false
+        dobreRadio = 'hejka'
+        wynik = 0
+      }, 4000)
+    }
     setTimeout(() => {
       document.getElementById('pyt').innerHTML =
         posortowanePytania[indexik].question
@@ -169,8 +194,6 @@ function wyborQuizu() {
       document.getElementById('cos2').style.animation = 'none'
       document.getElementById('cos3').style.animation = 'none'
       document.getElementById('cos4').style.animation = 'none'
-
-      wynik++
     }, 4000)
   } else if (cosiek === false || dobreRadio != 'hejka') {
     if (document.getElementById('optionA').checked) {
@@ -226,6 +249,10 @@ function wyborQuizu() {
         document.getElementById('option-modal').style.opacity = '1'
         button.disabled = false
       }, 1200)
+      document.getElementById('cos').style.backgroundColor = 'transparent'
+      document.getElementById('cos2').style.backgroundColor = 'transparent'
+      document.getElementById('cos3').style.backgroundColor = 'transparent'
+      document.getElementById('cos4').style.backgroundColor = 'transparent'
       document.getElementById('glowna').style.display = 'none'
       document.getElementById(dobreRadio).checked = false
       dobreRadio = 'hejka'
@@ -303,24 +330,10 @@ function checkAnswer() {
 }
 function zamknijOknoKoncowe() {
   document.getElementById('option-modal').style.display = 'none'
-  document.getElementById('glowna').style.display = 'block'
-  document.getElementById('glowna').style.opacity = '1'
-  wynik = 0
-  document.getElementById('pyt').innerHTML = posortowanePytania[0].question
-  document.getElementById('cos').innerHTML = posortowanePytania[0].optionA
-  document.getElementById('cos2').innerHTML = posortowanePytania[0].optionB
-  document.getElementById('cos3').innerHTML = posortowanePytania[0].optionC
-  document.getElementById('cos4').innerHTML = posortowanePytania[0].optionD
-  document.getElementById('cos').style.backgroundColor = 'transparent'
-  document.getElementById('cos2').style.backgroundColor = 'transparent'
-  document.getElementById('cos3').style.backgroundColor = 'transparent'
-  document.getElementById('cos4').style.backgroundColor = 'transparent'
-  document.getElementById('cos').style.animation = 'none'
-  document.getElementById('cos2').style.animation = 'none'
-  document.getElementById('cos3').style.animation = 'none'
-  document.getElementById('cos4').style.animation = 'none'
-  licznik++
-  document.getElementById(dobreRadio).checked = false
+  document.getElementById('logo-small').style.opacity = '1'
+  document.getElementById('info').style.opacity = '1'
+  document.getElementById('start').disabled = 'false'
+  document.getElementById('start').style.opacity = '1'
 }
 function zaczynamy() {
   wyczyscTablice()
