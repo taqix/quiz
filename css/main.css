@@ -21,6 +21,7 @@ body {
   /* align-items: center;
     min-height: 100vh; */
 }
+
 #zacznij > button {
   width: 15vw;
   padding: 1vw;
@@ -94,7 +95,7 @@ body {
   display: none;
   margin-top: 4%;
 }
-#start > button {
+#start > a > button {
   width: 15vw;
   padding: 1vw;
   font-size: 1.5vw;
@@ -117,7 +118,7 @@ body {
     rgba(19, 51, 94, 1) 100%
   );
 }
-#start > button:hover {
+#start > a > button:hover {
   cursor: pointer;
   transform: scale(1.1);
   transition: 0.6s;

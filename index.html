@@ -20,30 +20,16 @@
     />
   </head>
   <body>
-
     <!-- <audio autoplay id="vid">
       <source src="audio/Milionerzy-main.mp3" type="audio/mp3" />
       Twoja przeglądarka nie obsługuje elementu audio!
     </audio> -->
 
     <div class="container">
-
       <div id="zacznij">
         <button onclick="zacznij()">Zacznij</button>
       </div>
 
-      <div class="modal-container mb-2 mt-5" id="option-modal">
-        <div class="modal-content-container">
-          <h1>Twoja wygrana to:</h1>
-          <h1 id="wygrana"></h1>
-
-          <div class="modal-button-container mt-5 mb-2">
-            <button onclick="zamknijOknoKoncowe()" class="ponownie">
-              Zagraj jeszcze raz
-            </button>
-          </div>
-        </div>
-      </div>
       <img src="images/logo.png" alt="logo" id="logo" />
 
       <img src="images/logo.png" alt="logo" id="logo-small" />
@@ -64,66 +50,7 @@
       <div id="output"></div>
 
       <div id="start">
-        <button onclick="hide()">Start</button>
-      </div>
-      <div class="container" id="glowna">
-        <button id="startujemy" onclick="zaczynamy()">Zacznij</button>
-        <div class="col-12"><h1 id="pyt">Wybierz rodzaj quizu</h1></div>
-
-        <div class="row">
-          <div class="col-6">
-            <input
-              type="radio"
-              name="wyborQuiz"
-              id="optionA"
-              onclick="checkedOption()"
-              value="optionA"
-            />
-            <label for="optionA" class="wybory" id="cos">Quiz pierwszy</label>
-          </div>
-          <div class="col-6">
-            <input
-              type="radio"
-              name="wyborQuiz"
-              id="optionB"
-              onclick="checkedOption()"
-              value="optionB"
-            />
-            <label for="optionB" class="wybory" id="cos2">Quiz drugi</label>
-          </div>
-          <div class="col-6 mt-2">
-            <input
-              type="radio"
-              name="wyborQuiz"
-              id="optionC"
-              onclick="checkedOption()"
-              value="optionC"
-            />
-            <label for="optionC" class="wybory" id="cos3">Quiz trzeci</label>
-          </div>
-          <div class="col-6 mt-2">
-            <input
-              type="radio"
-              name="wyborQuiz"
-              id="optionD"
-              onclick="checkedOption()"
-              value="optionD"
-            />
-            <label for="optionD" class="wybory" id="cos4">Quiz czwarty</label>
-          </div>
-        </div>
-        <div class="row">
-          <div class="col-12 d-flex justify-content-center">
-            <button
-              onclick="wyborQuizu()"
-              style="width: 50%"
-              class="mt-2 mb-2 przyciskWyboru"
-              id="wyborOdpowiedzi"
-            >
-              Potwierdź
-            </button>
-          </div>
-        </div>
+        <a href="quiz.html"><button>Start</button></a>
       </div>
     </div>
     <script

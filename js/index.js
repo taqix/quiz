@@ -64,6 +64,7 @@ function hide() {
     document.getElementById('wyborOdpowiedzi').style.display = 'block'
   }, 4000)
 }
+
 let dobreRadio = 'hejka'
 let indexik = 0
 var test
@@ -123,6 +124,16 @@ function posortujPytania() {
 }
 function wyczyscTablice() {
   posortowanePytania.splice(0, posortowanePytania.length)
+}
+if (indexik === 0) {
+  wyczyscTablice()
+  posortujPytania()
+  document.getElementById('pyt').innerHTML = posortowanePytania[0].question
+
+  document.getElementById('cos').innerHTML = posortowanePytania[0].optionA
+  document.getElementById('cos2').innerHTML = posortowanePytania[0].optionB
+  document.getElementById('cos3').innerHTML = posortowanePytania[0].optionC
+  document.getElementById('cos4').innerHTML = posortowanePytania[0].optionD
 }
 function wyborQuizu() {
   var radios = document.getElementsByName('wyborQuiz')
@@ -238,6 +249,7 @@ function wyborQuizu() {
     indexik = 0
     setTimeout(() => {
       document.getElementById('option-modal').style.display = 'block'
+      document.getElementById('powroty').style.display = 'block'
       document.getElementById('glowna').style.animationName = 'fadeOut'
       document.getElementById('glowna').style.animationDuration = '1.2s'
       document.getElementById('wygrana').innerHTML = wynik
