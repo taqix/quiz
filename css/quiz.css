@@ -25,15 +25,15 @@ body {
   text-align: center;
 }
 #pasek-zmienny div {
-  height: 10px;
+  height: 1vw;
   animation: pasek calc(var(--czas) * 1s) steps(var(--czas)) forwards;
   transform-origin: left center;
 }
 #pasek-zmienny[data-style="plynnie"] div {
   animation: pasek calc(var(--czas) * 1s) linear forwards;
 }
-#pasek-zmienny[data-color="green"] div {
-  background: linear-gradient(to bottom, #5cffa0, #0ab419); 
+#pasek-zmienny[data-color="blue"] div {
+  background: linear-gradient(to bottom, #64b5f6, #1565c0); 
 }
 @keyframes pasek {
   to {
