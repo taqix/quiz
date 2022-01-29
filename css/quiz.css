@@ -18,7 +18,12 @@ body {
   display: none;
 }
 #output {
+  width: 100%;
+  margin-top: 35vh;
+  text-align: center;
   display: none;
+  font-size: 10vw;
+  color: white;
 }
 
 #glowna {
@@ -61,6 +66,9 @@ input[type='radio'] {
   padding-bottom: 1vw;
   width: 95%;
 }
+.wybory:hover{
+  cursor: pointer;
+}
 .przyciskWyboru {
   position: relative;
   width: 5vw;
@@ -73,8 +81,6 @@ input[type='radio'] {
   border: 1px solid black;
   text-shadow: 2px 2px black;
   font-family: 'Roboto', sans-serif;
-  /* background: rgb(19,51,94);
-    background: linear-gradient(90deg, rgba(19,51,94,1) 0%, rgba(24,77,143,0.9500175070028011) 12%, rgba(17,40,83,0.9472163865546218) 40%, rgba(17,40,83,0.95) 60%, rgba(24,77,143,0.95) 88%, rgba(19,51,94,1) 100%); */
   background: rgb(19, 51, 94);
   background: linear-gradient(
     50deg,
@@ -106,14 +112,19 @@ input[type='radio'] {
   border-radius: 20px;
   border: 3px solid lightgrey;
   display: none;
-  margin-top: 20vw;
+  margin-top: 25vh;
   padding: 1vw;
+}
+.h2{
+  font-size: 2vw;
+  margin: 2vw;
 }
 .ponownie {
   margin-left: 42%;
+  margin-top: 3vw;
   display: none;
   position: absolute;
-  width: 15vw;
+  width: 16vw;
   padding: 1vw;
   font-size: 1.5vw;
   border-radius: 90px;
@@ -123,8 +134,6 @@ input[type='radio'] {
   border: 1px solid black;
   text-shadow: 2px 2px black;
   font-family: 'Roboto', sans-serif;
-  /* background: rgb(19,51,94);
-    background: linear-gradient(90deg, rgba(19,51,94,1) 0%, rgba(24,77,143,0.9500175070028011) 12%, rgba(17,40,83,0.9472163865546218) 40%, rgba(17,40,83,0.95) 60%, rgba(24,77,143,0.95) 88%, rgba(19,51,94,1) 100%); */
   background: rgb(19, 51, 94);
   background: linear-gradient(
     50deg,
@@ -147,7 +156,7 @@ input[type='radio'] {
     background-color: transparent;
   }
   to {
-    background-color: red;
+    background-color: rgb(209, 142, 18);
   }
 }
 @keyframes fadeIn {

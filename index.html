@@ -20,11 +20,6 @@
     />
   </head>
   <body>
-    <!-- <audio autoplay id="vid">
-      <source src="audio/Milionerzy-main.mp3" type="audio/mp3" />
-      Twoja przeglądarka nie obsługuje elementu audio!
-    </audio> -->
-
     <div class="container">
       <div id="zacznij">
         <button onclick="zacznij()">Zacznij</button>
@@ -35,11 +30,11 @@
       <img src="images/logo.png" alt="logo" id="logo-small" />
 
       <div id="info">
-        <h2>Witaj w Milionerach!</h2>
+        <p id="h2">Witaj w Milionerach!</p>
         <br />
         <p>
           Przed tobą 5 pytań z różnych dziedziń. Do każdego z pytań będą podane
-          4 odpowiedzi, jednak tylko jedna z nich jest prawidłowa. Na każde
+          4 odpowiedzi, jednak tylko jedna z nich jest prawidłowa. Jeżeli źle odpowiesz - odpadasz. Na każde
           pytanie masz 10 sekund! Za każdą poprawną odpowiedź zdobywasz 100
           tysięcy złotych. Jeżeli odpowiesz na wszystkie pytania poprawnie,
           twoja nagroda zostanie podwojona!😛🤑 <br /><br />
@@ -50,7 +45,7 @@
       <div id="output"></div>
 
       <div id="start">
-        <a href="quiz.html"><button>Start</button></a>
+        <a href="quiz.html"><button onclick="audio_page2()">Start</button></a>
       </div>
     </div>
     <script

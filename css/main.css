@@ -18,8 +18,6 @@ body {
   flex-direction: column;
   align-items: center;
   color: white;
-  /* align-items: center;
-    min-height: 100vh; */
 }
 
 #zacznij > button {
@@ -33,8 +31,6 @@ body {
   text-shadow: 2px 2px black;
   font-family: 'Roboto', sans-serif;
   margin-top: 45vh;
-  /* background: rgb(19,51,94);
-    background: linear-gradient(90deg, rgba(19,51,94,1) 0%, rgba(24,77,143,0.9500175070028011) 12%, rgba(17,40,83,0.9472163865546218) 40%, rgba(17,40,83,0.95) 60%, rgba(24,77,143,0.95) 88%, rgba(19,51,94,1) 100%); */
   background: rgb(19, 51, 94);
   background: linear-gradient(
     50deg,
@@ -69,8 +65,11 @@ body {
   border: 3px solid black;
   display: none;
 }
+#h2{
+  font-size: 2vw;
+}
 #info {
-  width: 70%;
+  width: 65vw;
   background: linear-gradient(
     to left,
     rgba(255, 255, 255, 0.1),
@@ -79,7 +78,7 @@ body {
   border: none;
   border-radius: 15px;
   color: white;
-  font-size: 1.5vw;
+  font-size: 1.2vw;
   margin-top: 4%;
   box-shadow: 0px 8px 24px 0 rgba(0, 0, 0, 0.3);
   padding: 3vw;
@@ -105,8 +104,6 @@ body {
   border: 1px solid black;
   text-shadow: 2px 2px black;
   font-family: 'Roboto', sans-serif;
-  /* background: rgb(19,51,94);
-    background: linear-gradient(90deg, rgba(19,51,94,1) 0%, rgba(24,77,143,0.9500175070028011) 12%, rgba(17,40,83,0.9472163865546218) 40%, rgba(17,40,83,0.95) 60%, rgba(24,77,143,0.95) 88%, rgba(19,51,94,1) 100%); */
   background: rgb(19, 51, 94);
   background: linear-gradient(
     50deg,
@@ -201,7 +198,7 @@ label {
   }
   to {
     opacity: 1;
-    margin-top: 25vh;
+    margin-top: 22vh;
   }
 }
 @keyframes rotate {
