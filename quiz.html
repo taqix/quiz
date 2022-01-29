@@ -18,48 +18,71 @@
   <div id="pasek-zmienny" data-style="plynnie" data-color="blue" style="--czas: 10;">
     <div></div>
   </div>
+  
+    <div class="container" id="glowna">
+        <div class="col-12" id="pyt"> Wybierz rodzaj quizu</div>
 
-  <div class="container" id="glowna">
-
-    <div class="col-12">
-      <h1 id="pyt"></h1>
-    </div>
-
-    <div class="row">
-      <div class="col-6">
-        <input type="radio" name="wyborQuiz" id="optionA" onclick="checkedOption()" value="optionA" />
-        <label for="optionA" class="wybory" id="cos">Quiz pierwszy</label>
+        <div class="row mt-5 ">
+          <div class="col-6 mt-2 ">
+            <input
+              type="radio"
+              name="wyborQuiz"
+              id="optionA"
+              onclick="checkedOption()"
+              value="optionA"
+            />
+            <label for="optionA" class="wybory" id="cos">Quiz pierwszy</label>
+          </div>
+          <div class="col-6 mt-2">
+            <input
+              type="radio"
+              name="wyborQuiz"
+              id="optionB"
+              onclick="checkedOption()"
+              value="optionB"
+            />
+            <label for="optionB" class="wybory" id="cos2">Quiz drugi</label>
+          </div>
+          <div class="col-6 mt-5">
+            <input
+              type="radio"
+              name="wyborQuiz"
+              id="optionC"
+              onclick="checkedOption()"
+              value="optionC"
+            />
+            <label for="optionC" class="wybory" id="cos3">Quiz trzeci</label>
+          </div>
+          <div class="col-6 mt-5">
+            <input
+              type="radio"
+              name="wyborQuiz"
+              id="optionD"
+              onclick="checkedOption()"
+              value="optionD"
+            />
+            <label for="optionD" class="wybory" id="cos4">Quiz czwarty</label>
+          </div>
+        </div>
+        <div class="row mt-4">
+          <div class="col-12 d-flex justify-content-center">
+            <button
+              onclick="wyborQuizu()"
+              style="width: 50%"
+              class="mt-5 mb-4 przyciskWyboru"
+              id="wyborOdpowiedzi"
+            >
+              Potwierdź
+            </button>
+          </div>
+        </div>
       </div>
-      <div class="col-6">
-        <input type="radio" name="wyborQuiz" id="optionB" onclick="checkedOption()" value="optionB" />
-        <label for="optionB" class="wybory" id="cos2">Quiz drugi</label>
-      </div>
-      <div class="col-6 mt-2">
-        <input type="radio" name="wyborQuiz" id="optionC" onclick="checkedOption()" value="optionC" />
-        <label for="optionC" class="wybory" id="cos3">Quiz trzeci</label>
-      </div>
-      <div class="col-6 mt-2">
-        <input type="radio" name="wyborQuiz" id="optionD" onclick="checkedOption()" value="optionD" />
-        <label for="optionD" class="wybory" id="cos4">Quiz czwarty</label>
-      </div>
-    </div>
-    <div class="row">
-      <div class="col-12 d-flex justify-content-center">
-        <button onclick="wyborQuizu()" style="width: 50%" class="mt-2 mb-2 przyciskWyboru" id="wyborOdpowiedzi">
-          Potwierdź
-        </button>
-      </div>
-    </div>
-  </div>
-  <div class="modal-container mb-2 mt-5" id="option-modal">
-    <div class="modal-content-container">
-      <h1>Twoja wygrana to:</h1>
-      <h1 id="wygrana"></h1>
-
-
-    </div>
-
-  </div>
+      <div class="modal-container mb-2" id="option-modal">
+        <div class="modal-content-container">
+          <h1>Twoja wygrana to:</h1><br>
+          <h1 id="wygrana"></h1>
+          </div>
+          </div>
   <div class="modal-button-container mt-3 mb-2">
     <a href="index.html"><button class="ponownie" id='powroty'>
         Zagraj jeszcze raz

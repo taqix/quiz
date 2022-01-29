@@ -23,6 +23,8 @@ body {
 
 #glowna {
   text-align: center;
+  height: 100%;
+  margin-top: 12vw;
 }
 #pasek-zmienny div {
   height: 1vw;
@@ -43,25 +45,69 @@ body {
 input[type='radio'] {
   display: none;
 }
-label {
-  border: 1px solid red;
-  padding-top: 5px;
-  padding-bottom: 5px;
-  width: 100%;
+#pyt {
+  font-size: 4vw;
+}
+.wybory {
+  border-radius: 10px;
+  background: linear-gradient(
+    to left,
+    rgba(255, 255, 255, 0.1),
+    rgba(255, 255, 255, 0.25)
+  );
+  box-shadow: 0px 8px 24px 0 rgba(0, 0, 0, 0.3);
+  font-size: 2vw;
+  padding-top: 1vw;
+  padding-bottom: 1vw;
+  width: 95%;
 }
 .przyciskWyboru {
   position: relative;
+  width: 5vw;
+  padding: 1vw;
+  font-size: 1.9vw;
+  border-radius: 90px;
+  color: white;
+  transition: 1s;
+  animation: fadeIn 1.2s ease-in-out;
+  border: 1px solid black;
+  text-shadow: 2px 2px black;
+  font-family: 'Roboto', sans-serif;
+  /* background: rgb(19,51,94);
+    background: linear-gradient(90deg, rgba(19,51,94,1) 0%, rgba(24,77,143,0.9500175070028011) 12%, rgba(17,40,83,0.9472163865546218) 40%, rgba(17,40,83,0.95) 60%, rgba(24,77,143,0.95) 88%, rgba(19,51,94,1) 100%); */
+  background: rgb(19, 51, 94);
+  background: linear-gradient(
+    50deg,
+    rgba(19, 51, 94, 1) 0%,
+    rgba(24, 77, 143, 0.9500175070028011) 12%,
+    rgba(17, 40, 83, 0.9472163865546218) 40%,
+    rgba(17, 40, 83, 0.95) 60%,
+    rgba(24, 77, 143, 0.95) 88%,
+    rgba(19, 51, 94, 1) 100%
+  );
+}
+.przyciskWyboru:hover {
+  cursor: pointer;
+  transform: scale(1.1);
+  transition: 0.6s;
+  border: 1px solid white;
 }
 .modal-container {
   z-index: 1;
   animation: fadeIn 1.2s ease-in-out;
   animation-iteration-count: 1;
-  background-color: rgb(0, 0, 0);
-  background-color: rgba(0, 0, 0, 0.4);
+  background: linear-gradient(
+    to left,
+    rgba(255, 255, 255, 0.1),
+    rgba(255, 255, 255, 0.25)
+  );
+  box-shadow: 0px 8px 24px 0 rgba(0, 0, 0, 0.3);
   text-align: center;
   border-radius: 20px;
   border: 3px solid lightgrey;
   display: none;
+  margin-top: 20vw;
+  padding: 1vw;
 }
 .ponownie {
   margin-left: 42%;

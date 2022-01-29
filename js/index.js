@@ -136,7 +136,8 @@ if (indexik === 0) {
   document.getElementById('cos4').innerHTML = posortowanePytania[0].optionD
 }
 function wyborQuizu() {
-  document.getElementById("pasek-zmienny").style.display = "none"
+  document.getElementById('pasek-zmienny').style.display = 'none'
+  document.getElementById('wyborOdpowiedzi').disabled = true
   var radios = document.getElementsByName('wyborQuiz')
   for (var i = 0; i < radios.length; i++) {
     if (radios[i].checked) {
@@ -160,6 +161,10 @@ function wyborQuizu() {
       document.getElementById('cos4').style.backgroundColor = 'green'
     }
     document.getElementById(dobreRadio).checked = false
+    document.getElementById('optionA').disabled = true
+    document.getElementById('optionB').disabled = true
+    document.getElementById('optionC').disabled = true
+    document.getElementById('optionD').disabled = true
     dobreRadio = 'hejka'
     indexik++
     wynik++
@@ -188,7 +193,12 @@ function wyborQuizu() {
       }, 4000)
     }
     setTimeout(() => {
-      document.getElementById("pasek-zmienny").style.display = "block"
+      document.getElementById('pasek-zmienny').style.display = 'block'
+      document.getElementById('optionA').disabled = false
+      document.getElementById('optionB').disabled = false
+      document.getElementById('optionC').disabled = false
+      document.getElementById('optionD').disabled = false
+      document.getElementById('wyborOdpowiedzi').disabled = false
       document.getElementById('pyt').innerHTML =
         posortowanePytania[indexik].question
       document.getElementById('cos').innerHTML =
@@ -243,6 +253,10 @@ function wyborQuizu() {
     ) {
       document.getElementById('cos4').style.backgroundColor = 'green'
     }
+    document.getElementById('optionA').disabled = true
+    document.getElementById('optionB').disabled = true
+    document.getElementById('optionC').disabled = true
+    document.getElementById('optionD').disabled = true
     wyczyscTablice()
     posortujPytania()
 
@@ -250,6 +264,11 @@ function wyborQuizu() {
     button.disabled = true
     indexik = 0
     setTimeout(() => {
+      document.getElementById('optionA').disabled = false
+      document.getElementById('optionB').disabled = false
+      document.getElementById('optionC').disabled = false
+      document.getElementById('optionD').disabled = false
+      document.getElementById('wyborOdpowiedzi').disabled = false
       document.getElementById('option-modal').style.display = 'block'
       document.getElementById('powroty').style.display = 'block'
       document.getElementById('glowna').style.animationName = 'fadeOut'
