@@ -153,7 +153,7 @@ function wyborQuizu() {
         document.getElementById('option-modal').style.display = 'block'
         document.getElementById('glowna').style.animationName = 'fadeOut'
         document.getElementById('glowna').style.animationDuration = '1.2s'
-        document.getElementById('wygrana').innerHTML = wynik + ' jesteś koksem'
+        document.getElementById('wygrana').innerHTML = wynik + '🤑'
         proba++
         setTimeout(() => {
           document.getElementById('glowna').style.animation = 'none'
