@@ -24,6 +24,22 @@ body {
 #glowna {
   text-align: center;
 }
+#pasek-zmienny div {
+  height: 10px;
+  animation: pasek calc(var(--czas) * 1s) steps(var(--czas)) forwards;
+  transform-origin: left center;
+}
+#pasek-zmienny[data-style="plynnie"] div {
+  animation: pasek calc(var(--czas) * 1s) linear forwards;
+}
+#pasek-zmienny[data-color="green"] div {
+  background: linear-gradient(to bottom, #5cffa0, #0ab419); 
+}
+@keyframes pasek {
+  to {
+      transform: scaleX(0);
+  }
+}
 input[type='radio'] {
   display: none;
 }

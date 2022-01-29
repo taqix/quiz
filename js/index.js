@@ -136,6 +136,7 @@ if (indexik === 0) {
   document.getElementById('cos4').innerHTML = posortowanePytania[0].optionD
 }
 function wyborQuizu() {
+  document.getElementById("pasek-zmienny").style.display = "none"
   var radios = document.getElementsByName('wyborQuiz')
   for (var i = 0; i < radios.length; i++) {
     if (radios[i].checked) {
@@ -187,6 +188,7 @@ function wyborQuizu() {
       }, 4000)
     }
     setTimeout(() => {
+      document.getElementById("pasek-zmienny").style.display = "block"
       document.getElementById('pyt').innerHTML =
         posortowanePytania[indexik].question
       document.getElementById('cos').innerHTML =
