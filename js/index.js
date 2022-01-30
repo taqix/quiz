@@ -94,12 +94,12 @@ const questions = [
     correctOption: 'optionD',
   },
   {
-    question: 'Właściwość type="checkbox" wstawia:',
-    optionA: 'boxy, które można zaznaczyć',
-    optionB: 'suwak do oznaczenia wartości liczbowej',
-    optionC: 'pole tekstowe',
-    optionD: 'pole do wprowadzenia liczb',
-    correctOption: 'optionA',
+    question: 'W którym roku obecna klasa 2P będzie zdawać maturę:',
+    optionA: '2026',
+    optionB: '2025',
+    optionC: '2137',
+    optionD: '2023',
+    correctOption: 'optionB',
   },
 ]
 
