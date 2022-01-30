@@ -6,8 +6,7 @@
   <meta http-equiv="X-UA-Compatible" content="IE=edge" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Document</title>
-  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet"
-    integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3" crossorigin="anonymous" />
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3" crossorigin="anonymous" />
   <link rel="stylesheet" href="css/quiz.css" />
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
@@ -15,83 +14,52 @@
 </head>
 
 <body>
-  <div id="pasek-zmienny" data-style="plynnie" data-color="blue" style="--czas: 10;">
+  <div id="pasek-zmienny" data-style="plynnie" data-color="blue" style="--czas: 60;">
     <div></div>
   </div>
-    <div id="output"></div>
-    <div class="container" id="glowna">
-        <div class="col-12" id="pyt"> Wybierz rodzaj quizu</div>
+  <div id="output"></div>
+  <div class="container" id="glowna">
+    <div class="col-12" id="pyt"> Wybierz rodzaj quizu</div>
 
-        <div class="row mt-5 ">
-          <div class="col-6 mt-2 ">
-            <input
-              type="radio"
-              name="wyborQuiz"
-              id="optionA"
-              onclick="checkedOption()"
-              value="optionA"
-            />
-            <label for="optionA" class="wybory" id="cos">Quiz pierwszy</label>
-          </div>
-          <div class="col-6 mt-2">
-            <input
-              type="radio"
-              name="wyborQuiz"
-              id="optionB"
-              onclick="checkedOption()"
-              value="optionB"
-            />
-            <label for="optionB" class="wybory" id="cos2">Quiz drugi</label>
-          </div>
-          <div class="col-6 mt-5">
-            <input
-              type="radio"
-              name="wyborQuiz"
-              id="optionC"
-              onclick="checkedOption()"
-              value="optionC"
-            />
-            <label for="optionC" class="wybory" id="cos3">Quiz trzeci</label>
-          </div>
-          <div class="col-6 mt-5">
-            <input
-              type="radio"
-              name="wyborQuiz"
-              id="optionD"
-              onclick="checkedOption()"
-              value="optionD"
-            />
-            <label for="optionD" class="wybory" id="cos4">Quiz czwarty</label>
-          </div>
-        </div>
-        <div class="row mt-4">
-          <div class="col-12 d-flex justify-content-center">
-            <button
-              onclick="wyborQuizu()"
-              style="width: 50%"
-              class="mt-5 mb-4 przyciskWyboru"
-              id="wyborOdpowiedzi"
-            >
-              Potwierdź
-            </button>
-          </div>
-        </div>
+    <div class="row mt-5 ">
+      <div class="col-6 mt-2 ">
+        <input type="radio" name="wyborQuiz" id="optionA" onclick="checkedOption()" value="optionA" />
+        <label for="optionA" class="wybory" id="cos">Quiz pierwszy</label>
       </div>
-      <div class="modal-container mb-2" id="option-modal">
-        <div class="modal-content-container">
-          <p class="h2">Twoja wygrana to:</p>
-          <p class="h2" id="wygrana"></p>
-          </div>
-          </div>
-  <div class="modal-button-container mt-3 mb-2">
+      <div class="col-6 mt-2">
+        <input type="radio" name="wyborQuiz" id="optionB" onclick="checkedOption()" value="optionB" />
+        <label for="optionB" class="wybory" id="cos2">Quiz drugi</label>
+      </div>
+      <div class="col-6 mt-5">
+        <input type="radio" name="wyborQuiz" id="optionC" onclick="checkedOption()" value="optionC" />
+        <label for="optionC" class="wybory" id="cos3">Quiz trzeci</label>
+      </div>
+      <div class="col-6 mt-5">
+        <input type="radio" name="wyborQuiz" id="optionD" onclick="checkedOption()" value="optionD" />
+        <label for="optionD" class="wybory" id="cos4">Quiz czwarty</label>
+      </div>
+    </div>
+    <div class="row mt-4">
+      <div class="col-12 d-flex justify-content-center">
+        <button onclick="wyborQuizu()" style="width: 50%" class="mt-5 mb-4 przyciskWyboru" id="wyborOdpowiedzi">
+          Potwierdź
+        </button>
+      </div>
+    </div>
+  </div>
+  <div class="modal-container mb-2" id="option-modal">
+    <div class="modal-content-container">
+      <h1>Twoja wygrana to:</h1><br>
+      <h1 id="wygrana"></h1>
+    </div>
+  </div>
+  <div class="modal-button-container mt-3 mb-2" id='boxForReturnButton'>
     <a href="index.html"><button class="ponownie" id='powroty'>
         Zagraj jeszcze raz
       </button></a>
   </div>
   </div>
-  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js"
-    integrity="sha384-ka7Sk0Gln4gmtz2MlQnikT1wXgYsOg+OMhuP+IlRH9sENBO0LRn5q+8nbTov4+1p"
-    crossorigin="anonymous"></script>
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-ka7Sk0Gln4gmtz2MlQnikT1wXgYsOg+OMhuP+IlRH9sENBO0LRn5q+8nbTov4+1p" crossorigin="anonymous"></script>
   <script src="js/index.js"></script>
 </body>
 

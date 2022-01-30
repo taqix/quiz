@@ -1,3 +1,7 @@
+var przycisk = document.getElementById('wyborOdpowiedzi')
+
+przycisk.addEventListener('click', () => {})
+
 function zacznij() {
   document.getElementById('zacznij').style.display = 'none'
   alert('Włącz dźwięk!')
@@ -21,12 +25,11 @@ function show_start() {
 function hide_logo() {
   document.getElementById('logo').style.display = 'none'
 }
-function stop()
-{
+function stop() {
   var audio = new Audio('audio/Milionerzy-main.mp3')
   audio.stop()
 }
-
+let click = 0
 let dobreRadio = 'hejka'
 let indexik = 0
 var test
@@ -44,10 +47,10 @@ const questions = [
   },
   {
     question: 'Związek chemiczny wody to:',
-    optionA: 'CO2',
-    optionB: 'H20',
-    optionC: 'HCL',
-    optionD: 'NAOH',
+    optionA: 'CO<sub>2</sub>',
+    optionB: 'H<sub>2</sub>0',
+    optionC: 'HCl',
+    optionD: 'NaOH',
     correctOption: 'optionB',
   },
   {
@@ -74,7 +77,32 @@ const questions = [
     optionD: 'Wenus a Marsem',
     correctOption: 'optionD',
   },
+  {
+    question: 'Które miejsce miało ZSŁ w rankinku techników w 2022r.:',
+    optionA: '1',
+    optionB: '2',
+    optionC: '3',
+    optionD: '4',
+    correctOption: 'optionC',
+  },
+  {
+    question: 'Który zapis stylu CSS ustawi tło bloku na kolor niebieski:',
+    optionA: 'div {shadow: blue;}',
+    optionB: 'div {border-color: blue;}',
+    optionC: 'div {color: blue;}',
+    optionD: 'div {background-color: blue;}',
+    correctOption: 'optionD',
+  },
+  {
+    question: 'Właściwość type="checkbox" wstawia:',
+    optionA: 'boxy, które można zaznaczyć',
+    optionB: 'suwak do oznaczenia wartości liczbowej',
+    optionC: 'pole tekstowe',
+    optionD: 'pole do wprowadzenia liczb',
+    correctOption: 'optionA',
+  },
 ]
+
 let posortowanePytania = []
 function posortujPytania() {
   while (posortowanePytania.length < 5) {
@@ -90,32 +118,58 @@ function wyczyscTablice() {
 if (indexik === 0) {
   var audio = new Audio('audio/Milionerzy-background.mp3')
   audio.play()
-  document.getElementById("pasek-zmienny").style.display = "none"
-  document.getElementById("glowna").style.display = "none"
-  document.getElementById('output').style.display = "block"
-    var sec = 3
-    var close = setInterval(function () {
-      document.getElementById('output').innerHTML = sec
-      sec--
-      if (sec === -1) {
-        clearInterval(close)
-      }
-    }, 1000)
+  document.getElementById('pasek-zmienny').style.display = 'none'
+  document.getElementById('glowna').style.display = 'none'
+  document.getElementById('output').style.display = 'block'
+  var sec = 3
+  var close = setInterval(function () {
+    document.getElementById('output').innerHTML = sec
+    sec--
+    if (sec === -1) {
+      clearInterval(close)
+    }
+  }, 1000)
   wyczyscTablice()
   posortujPytania()
-  setTimeout(() =>{
-    document.getElementById("output").style.display = "none"
-    document.getElementById("pasek-zmienny").style.display = "block"
-    document.getElementById("glowna").style.display = "block"
+  setTimeout(() => {
+    document.getElementById('output').style.display = 'none'
+    document.getElementById('pasek-zmienny').style.display = 'block'
+    document.getElementById('glowna').style.display = 'block'
     document.getElementById('pyt').innerHTML = posortowanePytania[0].question
     document.getElementById('cos').innerHTML = posortowanePytania[0].optionA
     document.getElementById('cos2').innerHTML = posortowanePytania[0].optionB
     document.getElementById('cos3').innerHTML = posortowanePytania[0].optionC
     document.getElementById('cos4').innerHTML = posortowanePytania[0].optionD
-  },4000)
+  }, 4000)
+  setTimeout(() => {
+    document.getElementById('optionA').disabled = false
+    document.getElementById('optionB').disabled = false
+    document.getElementById('optionC').disabled = false
+    document.getElementById('optionD').disabled = false
+    document.getElementById('wyborOdpowiedzi').disabled = false
+    document.getElementById('option-modal').style.display = 'block'
+    document.getElementById('boxForReturnButton').style.display = 'block'
+    document.getElementById('glowna').style.animationName = 'fadeOut'
+    document.getElementById('glowna').style.animationDuration = '1.2s'
+    if (wynik === 5) {
+      document.getElementById('wygrana').innerHTML = '1 000 000zł🤑'
+    } else {
+      document.getElementById('wygrana').innerHTML = wynik * 100000 + 'zł🤑'
+    }
+
+    proba++
+    setTimeout(() => {
+      document.getElementById('glowna').style.animation = 'none'
+      document.getElementById('glowna').style.opacity = '0'
+      document.getElementById('glowna').style.display = 'none'
+
+      document.getElementById('option-modal').style.opacity = '1'
+      button.disabled = false
+    }, 1200)
+  }, 64000)
 }
+
 function wyborQuizu() {
-  document.getElementById('pasek-zmienny').style.display = 'none'
   document.getElementById('wyborOdpowiedzi').disabled = true
   var radios = document.getElementsByName('wyborQuiz')
   for (var i = 0; i < radios.length; i++) {
@@ -149,11 +203,12 @@ function wyborQuizu() {
     wynik++
     if (wynik === 5) {
       setTimeout(() => {
-        document.getElementById("pasek-zmienny").style.display = "none"
+        document.getElementById('pasek-zmienny').style.display = 'none'
         document.getElementById('option-modal').style.display = 'block'
+        document.getElementById('boxForReturnButton').style.display = 'block'
         document.getElementById('glowna').style.animationName = 'fadeOut'
         document.getElementById('glowna').style.animationDuration = '1.2s'
-        document.getElementById('wygrana').innerHTML = wynik + '🤑'
+        document.getElementById('wygrana').innerHTML = '1 000 000zł 🤑'
         proba++
         setTimeout(() => {
           document.getElementById('glowna').style.animation = 'none'
@@ -170,10 +225,9 @@ function wyborQuizu() {
         document.getElementById(dobreRadio).checked = false
         dobreRadio = 'hejka'
         wynik = 0
-      }, 4000)
+      }, 2000)
     }
     setTimeout(() => {
-      document.getElementById('pasek-zmienny').style.display = 'block'
       document.getElementById('optionA').disabled = false
       document.getElementById('optionB').disabled = false
       document.getElementById('optionC').disabled = false
@@ -197,7 +251,7 @@ function wyborQuizu() {
       document.getElementById('cos2').style.animation = 'none'
       document.getElementById('cos3').style.animation = 'none'
       document.getElementById('cos4').style.animation = 'none'
-    }, 4000)
+    }, 2000)
   } else if (cosiek === false || dobreRadio != 'hejka') {
     if (document.getElementById('optionA').checked) {
       document.getElementById('cos').style.animation = 'none'
@@ -239,7 +293,7 @@ function wyborQuizu() {
     document.getElementById('optionD').disabled = true
     wyczyscTablice()
     posortujPytania()
-
+    document.getElementById('pasek-zmienny').style.display = 'none'
     let button = document.querySelector('.ponownie')
     button.disabled = true
     indexik = 0
@@ -250,10 +304,10 @@ function wyborQuizu() {
       document.getElementById('optionD').disabled = false
       document.getElementById('wyborOdpowiedzi').disabled = false
       document.getElementById('option-modal').style.display = 'block'
-      document.getElementById('powroty').style.display = 'block'
+      document.getElementById('boxForReturnButton').style.display = 'block'
       document.getElementById('glowna').style.animationName = 'fadeOut'
       document.getElementById('glowna').style.animationDuration = '1.2s'
-      document.getElementById('wygrana').innerHTML = wynik
+      document.getElementById('wygrana').innerHTML = wynik * 100000 + 'zł🤑'
       proba++
       setTimeout(() => {
         document.getElementById('glowna').style.animation = 'none'
@@ -269,7 +323,7 @@ function wyborQuizu() {
       document.getElementById(dobreRadio).checked = false
       dobreRadio = 'hejka'
       wynik = 0
-    }, 4000)
+    }, 2000)
   } else {
     alert('cos sie zjebalo')
   }
